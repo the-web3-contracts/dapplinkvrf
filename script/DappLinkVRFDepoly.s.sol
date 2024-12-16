@@ -5,7 +5,7 @@ import {Script, console} from "forge-std/Script.sol";
 import "../src/DappLinkVRF.sol";
 import "../src/DappLinkVRFFactory.sol";
 
-
+// forge script ./script/DappLinkVRFDepoly.s.sol --rpc-url https://eth-holesky.g.alchemy.com/v2/BvSZ5ZfdIwB-5SDXMz8PfGcbICYQqwrl --private-key $PrivateKey --broadcast
 contract DappLinkVRFDepolyScript is Script {
     function run() external {
         vm.startBroadcast();
