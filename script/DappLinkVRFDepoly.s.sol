@@ -26,7 +26,6 @@ contract DappLinkVRFDepolyScript is Script {
 
         address deployerAddress = vm.addr(deployerPrivateKey);
 
-
         vm.startBroadcast();
 
         emptyContract = new EmptyContract();
@@ -48,13 +47,15 @@ contract DappLinkVRFDepolyScript is Script {
         );
 
         DappLinkVRFManager dappLinkVRF = new DappLinkVRFManager();
-        console.log("dapplink base contract deployed at:", address(dappLinkVRF));
+
 
         DappLinkVRFFactory dappLinkVRFFactory = new DappLinkVRFFactory();
-        console.log("DappLink Proxy Factory contract deployed at:", address(dappLinkVRFFactory));
 
         address proxyDappLink = dappLinkVRFFactory.createProxy(address(dappLinkVRF), msg.sender, address(blsApkRegistry));
 
+        console.log("dapplink blsApkRegistry contract deployed at:", address(blsApkRegistry));
+        console.log("dapplink base contract deployed at:", address(dappLinkVRF));
+        console.log("DappLink Proxy Factory contract deployed at:", address(dappLinkVRFFactory));
         console.log("DappLink Proxy contract deployed at:", proxyDappLink);
 
         vm.stopBroadcast();

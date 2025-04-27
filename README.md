@@ -1,66 +1,28 @@
-## Foundry
+## The Web3 VRF 小型项目实战
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+学习目的：
+- 链上如何使用随机数
+- 理解 BLS 签名验证签名流程，
 
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
+## Build
+```
 $ forge build
 ```
 
-### Test
-
+## Deploy
 ```shell
-$ forge test
+forge script ./script/DappLinkVRFDepoly.s.sol:DappLinkVRFDepolyScript --rpc-url https://ethereum-holesky-rpc.publicnode.com --private-key $PRIVATE_KEY --broadcast
 ```
 
-### Format
-
-```shell
-$ forge fmt
+## Call Function
+```
+cast send --rpc-url https://ethereum-holesky-rpc.publicnode.com --private-key $PRIVATE_KEY 0x21EA59025C4a16E948224D100D97c3a24706C728 "requestRandomWords(uint256,uint256)" 10000, 3
 ```
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
+## Address
 ```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+DappLink blsApkRegistry contract deployed at: 0x2bf417A46a595Facd902111c13008Cb3ECD536b7
+DappLink base contract deployed at: 0xE74ee1280B0332cA7155b7d423549e4A0B5FA1cA
+DappLink Proxy Factory contract deployed at: 0x6c882e1D04940A685EA8b96BC2d2c6541ea64e24
+DappLink Proxy contract deployed at: 0x21EA59025C4a16E948224D100D97c3a24706C728
 ```
