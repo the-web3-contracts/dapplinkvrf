@@ -46,12 +46,10 @@ contract DappLinkVRFManager is Initializable, OwnableUpgradeable, DappLinkVRFSto
 
     function fulfillRandomWords(uint256 _requestId, uint256[] memory _randomWords, bytes32 msgHash, uint256 referenceBlockNumber, IBLSApkRegistry.VrfNoSignerAndSignature memory params) external onlyDappLink {
         blsRegistry.checkSignatures(msgHash, referenceBlockNumber, params);
-
         requestMapping[_requestId] = RequestStatus({
             fulfilled: true,
             randomWords: _randomWords
         });
-
         emit FillRandomWords(_requestId, _randomWords);
     }
 

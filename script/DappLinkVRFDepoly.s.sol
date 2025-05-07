@@ -57,7 +57,12 @@ contract DappLinkVRFDepolyScript is Script {
         console.log("dapplink base contract deployed at:", address(dappLinkVRF));
         console.log("DappLink Proxy Factory contract deployed at:", address(dappLinkVRFFactory));
         console.log("DappLink Proxy contract deployed at:", proxyDappLink);
-
+        /*
+         * dapplink blsApkRegistry contract deployed at: 0x78Ea04E072C857C508999b391176e91487A6F27f
+         * dapplink base contract deployed at: 0x5459028BA30E096Fc3A3748e52741625E12af44F
+         * DappLink Proxy Factory contract deployed at: 0xEd3d1EAE2Ea3A8Fa11a490157afCf6051EA98E49
+         * DappLink Proxy contract deployed at: 0xD7Aa231A3470668ac46ABFC63b46ddC81DF4727f
+        */
         vm.stopBroadcast();
     }
 

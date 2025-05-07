@@ -16,13 +16,13 @@ forge script ./script/DappLinkVRFDepoly.s.sol:DappLinkVRFDepolyScript --rpc-url 
 
 ## Call Function
 ```
-cast send --rpc-url https://ethereum-holesky-rpc.publicnode.com --private-key $PRIVATE_KEY 0x21EA59025C4a16E948224D100D97c3a24706C728 "requestRandomWords(uint256,uint256)" 10000, 3
+cast send --rpc-url https://ethereum-holesky-rpc.publicnode.com --private-key $PRIVATE_KEY 0xF752D67b60fC154Ef3BAD976AA80Ff2FaD367946 "requestRandomWords(uint256,uint256)" 10000 3
 ```
 
 ## Address
 ```
-DappLink blsApkRegistry contract deployed at: 0x2bf417A46a595Facd902111c13008Cb3ECD536b7
-DappLink base contract deployed at: 0xE74ee1280B0332cA7155b7d423549e4A0B5FA1cA
-DappLink Proxy Factory contract deployed at: 0x6c882e1D04940A685EA8b96BC2d2c6541ea64e24
-DappLink Proxy contract deployed at: 0x21EA59025C4a16E948224D100D97c3a24706C728
+  dapplink blsApkRegistry contract deployed at: 0x4d33d437ACA1c028B92963F09AeBe1c7F91e8922
+  dapplink base contract deployed at: 0x1F933548fD9A8841eCb48F087871Ed805B8492b6
+  DappLink Proxy Factory contract deployed at: 0x981C51c1678a8E61e24958988d24b9391870b0d8
+  DappLink Proxy contract deployed at: 0xF752D67b60fC154Ef3BAD976AA80Ff2FaD367946
 ```
